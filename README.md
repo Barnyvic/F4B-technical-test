@@ -10,6 +10,8 @@ This project implements a basic RESTful API for managing bank accounts using Nod
   - [Getting Started](#getting-started)
   - [Usage](#usage)
   - [Endpoints](#endpoints)
+  - [Contributing](#contributing)
+  - [License](#license)
   
 ## Features
 - Create a new bank account with account holder details.
@@ -76,6 +78,24 @@ Endpoint: `GET /account/:accountNumber`
     "accountType": "Savings",
     "balance": 1000
 }
+  
+Fetch All Bank Accounts
+Endpoint: `GET /accounts`
+* Response
   ```
-Fetch All Bank Accounts 
-Endpoint: GET /accounts.
+  [
+    {
+        "accountNumber": "1234567890",
+        "accountHolderName": "John Doe",
+        "dob": "1990-01-01",
+        "accountType": "Savings",
+        "balance": 1000
+    },]
+  ```
+
+
+## Contributing
+ * Barny Victor 
+  
+## License
+ This project is licensed under the MIT License.
