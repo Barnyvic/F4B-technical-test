@@ -47,7 +47,7 @@ npm run start:dev to start server using nodemon
   
 ## Endpoints
  Create a Bank Account
-  POST /create-account
+ ` POST /create-account`
   * Request Body:
   ```
   {
