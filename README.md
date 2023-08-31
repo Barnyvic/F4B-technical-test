@@ -58,40 +58,65 @@ npm run start:dev to start server using nodemon
 }
   ```
 * Response:
-   ```
+   ``` 
    {
-    "accountNumber": "1234567890",
-    "accountHolderName": "John Doe",
-    "dob": "1990-01-01",
-    "accountType": "Savings",
-    "balance": 1000
+    "statusCode": 201,
+    "message": "Account created successfully",
+    "data": {
+        "accountNumber": "6340777668",
+        "accountHolderName": "Victor Chuka",
+        "dob": "1998-02-05T00:00:00.000Z",
+        "accountType": "Current",
+        "balance": 10000
     }
+  }
+      
    ```
 Resolve a Bank Account 
 Endpoint: `GET /account/:accountNumber`
 * Response
-  ```
-  {
-    "accountNumber": "1234567890",
-    "accountHolderName": "John Doe",
-    "dob": "1990-01-01",
-    "accountType": "Savings",
-    "balance": 1000
+ ```
+ {
+    "statusCode": 200,
+    "message": "Account found",
+    "data": {
+        "accountNumber": "6851825673",
+        "accountHolderName": "Barny Victor",
+        "dob": "1998-02-05T00:00:00.000Z",
+        "accountType": "Savings",
+        "balance": 100
+    }
 }
-  
+ 
+ ```
+
 Fetch All Bank Accounts
 Endpoint: `GET /accounts`
 * Response
-  ```
-  [
-    {
-        "accountNumber": "1234567890",
-        "accountHolderName": "John Doe",
-        "dob": "1990-01-01",
-        "accountType": "Savings",
-        "balance": 1000
-    },]
-  ```
+```
+
+{
+    "statusCode": 200,
+    "message": "Accounts found",
+    "data": [
+        {
+            "accountNumber": "6790874819",
+            "accountHolderName": "John Doe",
+            "dob": "1990-01-01T00:00:00.000Z",
+            "accountType": "Savings",
+            "balance": 1000
+        },
+        {
+            "accountNumber": "6851825673",
+            "accountHolderName": "Barny Victor",
+            "dob": "1998-02-05T00:00:00.000Z",
+            "accountType": "Savings",
+            "balance": 100
+        }
+    ]
+}
+
+```
 
 
 ## Contributing
