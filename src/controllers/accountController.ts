@@ -4,7 +4,7 @@ import { Account } from "../interface/accountInterface";
 import { accountSchema } from "../validator/validator";
 
 const accounts:Account[] = [];
-export const createAccount = async (req: Request, res: Response) => {
+export const createAccount = async (req: Request, res: Response): Promise<Response> => {
     try {
         const { error, value } = accountSchema.validate(req.body);
 
