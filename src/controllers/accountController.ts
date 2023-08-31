@@ -13,6 +13,10 @@ export const createAccount = async (req: Request, res: Response) => {
         }
         const { accountHolderName, dob, accountType, initialBalance } =  value;
 
+         if (doesAccountExistForName(accountHolderName)) {
+        return errorResponse(res, 400, "An account for this name already exists");
+    }
+
         const accountNumber = generateUniqueAccountNumber();
 
          const newAccount: Account = {
@@ -70,3 +74,7 @@ const generateUniqueAccountNumber = (): string => {
     const accountNumber = `6${randomNumber.toString().padStart(9, '0')}`; 
     return accountNumber;
 }
+
+const doesAccountExistForName = (name: string): boolean => {
+    return accounts.some(account => account.accountHolderName === name);
+};
